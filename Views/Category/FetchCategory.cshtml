@@ -1,0 +1,21 @@
+﻿@model Library.Models.Entity.tblcategory
+@{
+    ViewBag.Title = "FetchCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm ("UpdateCategory", "Category", FormMethod.Post))
+{
+<div style="margin-bottom:15px"></div>
+<div class=" form-group">
+    @Html.HiddenFor(c=>c.id)
+    @Html.HiddenFor(c=>c.id, new  {@class="form-control"})
+</div>
+<div>
+    @*@Html.LabelFor(c=>c.name)*@
+    <label>Category Name</label>
+    @Html.TextBoxFor(c=>c.name, new { @class = "form-control" })
+    </div><br />
+    <button class="btn btn-warning">Update</button>
+}
+

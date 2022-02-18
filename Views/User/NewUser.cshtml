@@ -1,0 +1,53 @@
+﻿@model Library.Models.Entity.tbluser
+@{
+    ViewBag.Title = "NewUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.name, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Surname</label>
+        @Html.TextBoxFor(x => x.surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.surname, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Username</label>
+        @Html.TextBoxFor(x => x.username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.username, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Pssword</label>
+        @Html.TextBoxFor(x => x.password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.password, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>E-mail</label>
+        @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.email, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Phone</label>
+        @Html.TextBoxFor(x => x.phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.phone, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>School</label>
+        @Html.TextBoxFor(x => x.school, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.school, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Photo</label>
+        @Html.TextBoxFor(x => x.photo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.photo, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="btn1">Add User</button>
+    </div>
+</form>
+

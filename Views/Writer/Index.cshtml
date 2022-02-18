@@ -1,0 +1,41 @@
+﻿@using Library.Models.Entity
+@model List<tblwriter>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Writers</h2>
+@using (Html.BeginForm("Index", "Writer", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px">
+        <b>Type the Name of the Writer to Search: &nbsp</b> @Html.TextBox("w") &nbsp
+        <input type="submit" value="Search" />
+    </div>
+}
+<table class="table table-striped">
+    <tr style="background-color:#00ffff">
+        <th>Writer ID</th>
+        <th>Writer Name</th>
+        <th>Writer Surname</th>
+        <th>Writer Details</th>
+        <th>Writer's Books</th>
+        <th>Update</th>
+        <th>Delete</th>
+        
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.id</td>
+    <td>@x.name</td>
+    <td>@x.surname</td>
+    <td>@x.detail</td>
+    <td><a href="/Writer/WriterBooks/@x.id" class="btn btn-default" style="background-color:cadetblue;color:white">Writer's Books</a></td>
+    <td><a href="/Writer/FetchWriter/@x.id" class="btn btn-warning">Update</a></td>
+    <td>@Html.ActionLink("Delete", "DeleteWriter", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete?')" })</td>
+</tr>
+    }
+</table>
+<a href="/Writer/NewWriter/" class="btn btn-primary">Add New Writer</a>
+

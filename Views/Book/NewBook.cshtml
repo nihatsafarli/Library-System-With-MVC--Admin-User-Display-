@@ -1,0 +1,37 @@
+﻿@model Library.Models.Entity.tblbook
+@{
+    ViewBag.Title = "NewBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Book Name:</label>
+        @Html.TextBoxFor(b => b.name, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Category:</label>
+       @Html.DropDownListFor(b=>b.tblcategory.id,(List<SelectListItem>)ViewBag.c, new {@class="form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Writer:</label>
+        @Html.DropDownListFor(b => b.tblwriter.id, (List<SelectListItem>)ViewBag.w, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Publication Year:</label>
+        @Html.TextBoxFor(b => b.publicationyear, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Publication Home:</label>
+        @Html.TextBoxFor(b => b.publicationhome, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Pages:</label>
+        @Html.TextBoxFor(b => b.pages, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Add New Book</button>
+    </div>
+</form>

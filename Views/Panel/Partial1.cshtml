@@ -1,0 +1,43 @@
+﻿@using Library.Models.Entity
+@model List<tblannouncements>
+
+
+@foreach (var item in Model)
+
+{
+    string color = "";
+    if (item.category == "Welcome")
+    {
+        color = "bg-primary text-white";
+    }
+    if (item.category == "New Books")
+    {
+        color = "bg-success text-white";
+    }
+    if (item.category == "Delayed")
+    {
+        color = "bg-danger text-white";
+    }
+    if (item.category == "Writer Meeting")
+    {
+        color = "bg-success text-white";
+    }
+    if (item.category == "Information")
+    {
+        color = "bg-info text-white";
+    }
+    <div class="post">
+
+        <div class="user-block">
+
+            <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/avatar3.png" alt="user image">
+            <span class="username">
+                <a href="#" class="@color">@item.category</a>
+            </span>
+            <span class="description">@item.date</span>
+        </div>
+        <p>
+            @item.contents
+        </p>
+    </div>
+}

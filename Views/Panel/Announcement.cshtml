@@ -1,0 +1,28 @@
+﻿@using Library.Models.Entity
+@model List<tblannouncements>
+@{
+    ViewBag.Title = "Announcement";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Announcements</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Contents</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.category</td>
+            <td>@Convert.ToDateTime(x.date).ToString("dd/MM/yyyy")</td> 
+            <td>@x.contents</td>
+        </tr>
+    }
+</table>
+
+

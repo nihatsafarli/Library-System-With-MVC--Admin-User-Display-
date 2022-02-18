@@ -1,0 +1,52 @@
+﻿@model Library.Models.Entity.tblmovement
+@{
+    ViewBag.Title = "TakeBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateBook", "Give", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        <label>ID:</label>
+        @Html.TextBoxFor(e => e.id, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Book Name:</label>
+        @Html.TextBoxFor(e => e.tblbook.name, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>User Name</label>
+        @Html.TextBoxFor(e => e.tbluser.name, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Employee</label>
+        @Html.TextBoxFor(e => e.tblemployee.employee, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Purchase Date</label>
+        @Html.TextBoxFor(e => e.purchasedate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Return Date</label>
+        @Html.TextBoxFor(e => e.returndate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Member's Delivery Date</label>
+        <input type="text" class="form-control" name="memberdate" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <br />
+    <div>
+        <label>Delayed Day</label>
+        <input type="text" class="form-control" id="delayeddate" value="@ViewBag.day" />
+    </div>
+    <br />
+    <button class="btn btn-warning">Take a Book</button>
+}
+

@@ -1,0 +1,37 @@
+﻿@using Library.Models.Entity
+@model List<tblemployee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Employees</h2>
+<br />
+@using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px">
+        <b>Type the Name of the Employee to Search: &nbsp</b> @Html.TextBox("e") &nbsp
+        <input type="submit" value="Search" />
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Info</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.employee</td>
+
+            <td><a href="/Employee/FetchEmployee/@x.id" class="btn btn-warning">Update</a></td>
+            <td>@Html.ActionLink("Delete", "DeleteEmployee", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete?')" })</td>
+        </tr>
+    }
+</table>
+<a href="/Employee/NewEmployee/" class="btn btn-primary">Add New Employee</a>
+

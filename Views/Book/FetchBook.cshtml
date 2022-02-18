@@ -1,0 +1,53 @@
+﻿@model Library.Models.Entity.tblbook
+@{
+    ViewBag.Title = "FetchBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateBook", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.HiddenFor(k => k.id)
+        @Html.HiddenFor(k => k.id, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Book Name</label>
+        @Html.TextBoxFor(k => k.name, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Category</label>
+        @Html.DropDownListFor(b => b.tblcategory.id, (List<SelectListItem>)ViewBag.c, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Writer</label>
+        @Html.DropDownListFor(b => b.tblwriter.id, (List<SelectListItem>)ViewBag.w, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Publication Year </label>
+        @Html.TextBoxFor(k => k.publicationyear, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Publication Home</label>
+        @Html.TextBoxFor(k => k.publicationhome, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Pages</label>
+        @Html.TextBoxFor(k => k.pages, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Status</label>
+        @Html.TextBoxFor(k => k.status, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Update</button>
+}
+
+

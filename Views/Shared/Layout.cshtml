@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #b200ff;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #000000;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="/Statistic/Index/"><i class="glyphicon glyphicon-home"></i> &nbsp Main Menu</a>
+        <a href="/Category/Index"><i class="glyphicon glyphicon-list"></i> &nbsp Categories</a>
+        <a href="/Book/Index"><i class="glyphicon glyphicon-book"></i> &nbsp Books</a>
+        <a href="/Writer/Index"><i class="glyphicon glyphicon-pencil"></i> &nbsp Writers</a>
+        <a href="/User/Index"><i class="glyphicon glyphicon-user"></i> &nbsp Users</a>
+        <a href="/Employee/Index"><i class="glyphicon glyphicon-briefcase"></i> &nbsp Employees</a>
+        @if (User.IsInRole("A"))
+        {
+        <a href="/Give/GiveBook/"><i class="glyphicon glyphicon-circle-arrow-right"></i> &nbsp Give a Book </a>
+        <a href="/Give/Index"><i class="glyphicon glyphicon-circle-arrow-left"></i> &nbsp Take a Book </a>
+        }
+        <a href="/Transac/Index/"><i class="glyphicon glyphicon-refresh"></i> &nbsp Transactions </a>
+        <a href="/Statistic/Wheather"><i class="glyphicon glyphicon-cloud"></i> &nbsp Wheather Reports </a>
+        <a href="/Statistic/WheatherCard"><i class="glyphicon glyphicon-adjust"></i> &nbsp Wheather Cards </a>
+        <a href="/Statistic/Index/"><i class="glyphicon glyphicon-stats"></i> &nbsp Statistics </a>
+        <a href="/Announcements/Index"><i class="glyphicon glyphicon-bullhorn"></i> &nbsp Announcements </a>
+        <a href="/Statistic/Galery/"><i class="glyphicon glyphicon-picture"></i> &nbsp Galery </a>
+        <a href="/Statistic/LinQCard/"><i class="glyphicon glyphicon-plus-sign"></i> &nbsp LinQ Cards </a>
+        <a href="/Window/Index"><i class="glyphicon glyphicon-modal-window"></i> &nbsp Display </a>
+        <a href="/Settings/Index2/"><i class="glyphicon glyphicon-wrench"></i> &nbsp Settings </a>
+        <a href="/Admin/Admin/"><i class="glyphicon glyphicon-log-out"></i> &nbsp Exit </a>
+    </div>
+
+    <div class="main">
+      @RenderBody()
+    </div>
+
+</body>
+</html>

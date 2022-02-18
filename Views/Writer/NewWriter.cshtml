@@ -1,0 +1,28 @@
+﻿@model Library.Models.Entity.tblwriter
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Writer Name:</label>
+        @Html.TextBoxFor(w => w.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(w => w.name)
+        
+    </div>
+    <div style="margin-top:15px">
+        <label>Writer Surname:</label>
+        @Html.TextBoxFor(w => w.surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(w => w.surname)
+        
+    </div>
+    <div style="margin-top:15px">
+        <label>Writer Details:</label>
+        @Html.TextBoxFor(w => w.detail, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+       <button class="btn btn-primary">Add New Writer</button>
+    </div>
+</form>

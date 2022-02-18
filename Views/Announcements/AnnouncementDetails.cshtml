@@ -1,0 +1,34 @@
+﻿@model Library.Models.Entity.tblannouncements
+@{
+    ViewBag.Title = "AnnouncementDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateAnnouncement", "Announcements", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.HiddenFor(e => e.id)
+        @Html.HiddenFor(e => e.id, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Announcement Category</label>
+        @Html.TextBoxFor(e => e.category, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Announcement Date</label>
+        @Html.TextBoxFor(e => e.date, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Announcement Contents</label>
+        @Html.TextAreaFor(e => e.contents, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+}
+
+

@@ -1,0 +1,30 @@
+﻿@using Library.Models.Entity
+@model List<tblmovement>
+
+@{
+    ViewBag.Title = "LastBooks";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2>@ViewBag.u</h2>
+<br />
+
+<table class="table table-danger">
+    <tr>
+        <th>Book Name</th>
+       
+        <th>Employee</th>
+        <th>Purchase Date</th>
+        <th>Member Return Date</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+<tr>
+    <td>@x.tblbook.name</td>
+
+    <td>@x.tblemployee.employee</td>
+    <td>@Convert.ToDateTime(x.purchasedate).ToString("dd/MM/yyyy")</td>
+    <td>@Convert.ToDateTime(x.memberdate).ToString("dd/MM/yyyy")</td>
+</tr>
+            }
+</table>

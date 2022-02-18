@@ -1,0 +1,59 @@
+﻿@model Library.Models.Entity.tbluser
+@{
+    ViewBag.Title = "FetchCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.HiddenFor(c => c.id)
+        @Html.HiddenFor(c => c.id, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Name</label>
+        @Html.TextBoxFor(c => c.name, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Surname</label>
+        @Html.TextBoxFor(c => c.surname, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Username</label>
+        @Html.TextBoxFor(c => c.username, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Password</label>
+        @Html.TextBoxFor(c => c.password, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>E-Mail</label>
+        @Html.TextBoxFor(c => c.email, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Phone Number</label>
+        @Html.TextBoxFor(c => c.phone, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>Photo</label>
+        @Html.TextBoxFor(c => c.photo, new { @class = "form-control" })
+    </div>
+    <div>
+        @*@Html.LabelFor(c=>c.name)*@
+        <label>School</label>
+        @Html.TextBoxFor(c => c.school, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Update</button>
+}
+
+
+

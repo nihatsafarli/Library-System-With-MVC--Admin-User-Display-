@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efcce4f00f054a379a386358936326ad" Name="Diagram1">
+        <EntityTypeShape EntityType="DbLibraryProjectModel.sysdiagrams" Width="1.5" PointX="8" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblbook" Width="1.5" PointX="4.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblcategory" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblemployee" Width="1.5" PointX="9.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblmovement" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblpunishment" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tbltill" Width="1.5" PointX="7.875" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tbluser" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblwriter" Width="1.5" PointX="0.5" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblbook_tblcategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblbook_tblwriter" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblmovement_tblbook" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblmovement_tblemployee" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblmovement_tbluser" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblpunishment_tblmovement" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryProjectModel.FK_tblpunishment_tbluser" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblaboutus" Width="1.5" PointX="7.875" PointY="0.5" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblcontact" Width="1.5" PointX="6.125" PointY="2.625" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblmessage" Width="1.5" PointX="2.25" PointY="4.125" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tblannouncements" Width="1.5" PointX="6.25" PointY="5" />
+        <EntityTypeShape EntityType="DbLibraryProjectModel.tbladmin" Width="1.5" PointX="0.5" PointY="6.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

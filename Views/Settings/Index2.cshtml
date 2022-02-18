@@ -1,0 +1,67 @@
+﻿@using Library.Models.Entity
+@model List<tbladmin>
+
+@{   
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Authority</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+
+
+        <tr>
+            <td>@x.id</td>
+            <td>@x.username</td>
+            <td>@x.authority</td>
+
+            <td>
+                <a class="btn btn-info btn-sm" href="/Settings/UpdateAdmin/@x.id">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Update
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Settings/DeleteAdmin/@x.id">
+                    <i class="fas fa-trash">
+                    </i>
+                    Delete
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
+<button class="btn btn-success" data-toggle="modal" data-target="#Modal1">Add New Admin</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Admin</h2>
+            </div>
+            <form method="post" action="/Settings/NewAdmin/">
+                <div class="modal-body">
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control" /><br />
+                    <label>Password</label>
+                    <input type="text" name="password" class="form-control" /><br />
+                    <label>Authority</label>
+                    <input type="text" name="authority" class="form-control" /><br />
+                    <button class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

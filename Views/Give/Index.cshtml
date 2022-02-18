@@ -1,0 +1,32 @@
+﻿@using Library.Models.Entity
+@model List<tblmovement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Loan Book List</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Transaction ID</th>
+        <th>Book Name</th>
+        <th>User</th>
+        <th>Employee</th>
+        <th>Purchase Date</th>
+        <th>Return Date</th>        
+        <th>Take a Book</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.tblbook.name</td>
+            <td>@x.tbluser.name&nbsp; @x.tbluser.surname</td>
+            <td>@x.tblemployee.employee</td>
+            <td>@Convert.ToDateTime(x.purchasedate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime( x.returndate).ToString("dd/MM/yyyy")</td>            
+            <td><a href="/Give/TakeBook/@x.id" class="btn btn-default" style="background-color:#04fcff; color:black">Take a Book</a></td>
+           
+        </tr>
+    }
+</table>
+

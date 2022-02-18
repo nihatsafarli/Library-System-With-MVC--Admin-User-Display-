@@ -1,0 +1,26 @@
+﻿@model Library.Models.Entity.tblannouncements
+@{
+    ViewBag.Title = "NewAnnouncement";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<form class="form-group" method="post">
+    <div></div>
+    <div>
+        <label>Announcement Category</label>
+        @Html.TextBoxFor(x => x.category, new { @class = "form-control" })
+
+    </div><br />
+    <div>
+        <label>Announcement Contents</label>
+        @Html.TextBoxFor(x => x.contents, new { @class = "form-control" })
+    </div><br />
+    <div>
+        <label>Announcement Date</label>
+        @Html.TextBoxFor(x => x.date, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="btn1">Create Announcement </button>
+    </div>
+</form>
+

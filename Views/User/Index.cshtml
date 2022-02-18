@@ -1,0 +1,52 @@
+﻿@using Library.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tbluser>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>USERS</h2>
+<br />
+@using (Html.BeginForm("Index", "User", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px" class="color:green">
+        <b>Type the Name of the User Name to Search: &nbsp</b> @Html.TextBox("b") &nbsp
+        <input type="submit" value="Search" />
+    </div>
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>E-Mail</th>
+       
+        <th>Username</th>
+        
+       
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Books Purchased by the User</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.name</td>
+            <td>@x.surname</td>
+            <td>@x.email</td>
+            
+            <td>@x.username</td>
+            
+            
+            <td><a href="/User/FetchUser/@x.id" class="btn btn-warning">Update</a></td>
+            <td><a href="/User/DeleteUser/@x.id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/User/LastBooks/@x.id" class="btn btn-default" style="background-color:#0026ff;color:white">Books Purchased by the User</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/User/NewUser/" class="btn btn-primary">Add New User</a>
+
